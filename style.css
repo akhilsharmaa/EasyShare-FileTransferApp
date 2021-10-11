@@ -39,7 +39,8 @@ body, .drop-zone{
 .icon-container img{
     width: 75px;
     position: absolute;
-
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
 }
 
 .icon-container{
@@ -50,4 +51,22 @@ body, .drop-zone{
 
 .icon-container .center {
     z-index: 2;
+}
+
+.icon-container .right, .icon-container .left{
+     filter: grayscale(0.5);
+     transform: scale(0.9);
+}
+
+.dragged .icon-container .left {
+    transform: rotate(-10deg) translateX(-20px) scale(0.9);
+}
+
+.dragged .icon-container .right {
+    transform: rotate(10deg) translateX(20px) scale(0.9);
+     
+}
+
+.dragged .icon-container .center{
+    transform: translateY(-5px);
 }
